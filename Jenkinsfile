@@ -1,26 +1,21 @@
 pipeline {
-	agent { label 'master' }
+	agent any
  
 	stages {
-		stage ('STAGE 1') {
+		stage ('c-program') {
 			steps {
 				echo 'this is doing make ABC.exe file'
 				sh 'make clean'
 				sh 'make'
 			}
 		}
-	}
- 
-	stages {
-		stage ('STAGE 2') {
+		stage ('maven package') {
 			steps {
-				git :https://github.com/neelappagowda/Test.git
-					Branches to build : */patch-2
+				git branch: 'patch-1', url: 'https://github.com/neelappagowda/Test.git'
 				echo 'this is doing maven file file'
 				sh 'mvn clean'
 				sh 'mvn package'
         }
         }
         }
-
 }
