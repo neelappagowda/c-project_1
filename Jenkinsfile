@@ -11,12 +11,13 @@ pipeline {
 		stage ('maven package') {
 			agent { label 'java-node' }
 			steps {
-				sh '''
-				git 'https://github.com/neelappagowda/webapp.git'
-				echo 'this is doing maven file file'
-				pwd
-				 mvn package
-		'''
+		sh '''  pwd
+					if [[ -d './webapp' ]]; then 
+						cd './webapp' && git pull 
+					else 
+						git clone https://github.com/neelappagowda/webapp.git && cd ./webapp
+					fi
+					mvn clean install'''
         }
         }
         }
