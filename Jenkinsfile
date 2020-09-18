@@ -4,7 +4,8 @@ pipeline {
 	stages {
 		stage ('STAGE 1') {
 			steps {
-				echo 'This is slaveforc node with STAGE 1'
+				echo 'this is doing make ABC.exe file'
+				sh 'make clean'
 				sh 'make'
         }
         }
