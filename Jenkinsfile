@@ -15,7 +15,7 @@ pipeline {
 					if [[ -d './webapp' ]]; then 
 						cd './webapp' && git pull 
 					else 
-						git clone https://github.com/neelappagowda/webapp.git && cd ./webapp
+						git pull https://github.com/neelappagowda/webapp.git && cd ./webapp
 					fi
 					mvn clean install'''
         }
