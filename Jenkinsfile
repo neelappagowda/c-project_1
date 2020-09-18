@@ -11,8 +11,7 @@ pipeline {
 		}
 	}
  
-	stages {
-		stage ('STAGE 2') {
+		stage ('maven') {
 			steps {
 				git :https://github.com/neelappagowda/Test.git
 				echo 'this is doing maven file file'
