@@ -4,7 +4,7 @@ pipeline {
 		stage ('c-program') {
 			agent { label 'c-node' }
 			steps {
-				
+				git branch: 'neelappagowda-patch-1', url: 'https://github.com/neelappagowda/c-project_1.git'
 				echo 'this is doing make ABC.exe file'
 				sh 'make'
 			}
