@@ -1,5 +1,5 @@
 pipeline {
-	agent { label 'master' }
+	agent { label 'c-node' }
  
 	stages {
 		stage ('STAGE 1') {
@@ -10,7 +10,8 @@ pipeline {
 			}
 		}
 	}
- 
+ agent { label 'java-node' }
+	stages {
 		stage ('maven') {
 			steps {
 				git :https://github.com/neelappagowda/Test.git
@@ -20,4 +21,4 @@ pipeline {
         }
         }
         }
-
+}
