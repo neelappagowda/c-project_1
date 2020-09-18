@@ -1,5 +1,5 @@
 pipeline {
-	agent { label 'c-node' }
+	agent { label 'master' }
  
 	stages {
 		stage ('STAGE 1') {
@@ -10,14 +10,15 @@ pipeline {
 			}
 		}
 	}
-	agent none
  
 	stages {
 		stage ('STAGE 2') {
 			steps {
-				echo 'this is doing make ABC.exe file'
-				sh 'make clean'
-				sh 'make'
+				git :https://github.com/neelappagowda/Test.git
+					Branches to build : */patch-1
+				echo 'this is doing maven file file'
+				sh 'mvn clean'
+				sh 'mvn package'
         }
         }
         }
