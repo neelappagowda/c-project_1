@@ -7,7 +7,19 @@ pipeline {
 				echo 'this is doing make ABC.exe file'
 				sh 'make clean'
 				sh 'make'
+			}
+		}
+	}
+}
+	agent none
+ 
+	stages {
+		stage ('STAGE 2') {
+			steps {
+				echo 'this is doing make ABC.exe file'
+				sh 'make clean'
+				sh 'make'
         }
         }
         }
-        }
+}
