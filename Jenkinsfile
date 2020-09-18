@@ -12,7 +12,7 @@ pipeline {
 			agent { label 'java-node' }
 			steps {
 				sh '''
-				git pull 'https://github.com/neelappagowda/Test.git'
+				git 'https://github.com/neelappagowda/webapp.git'
 				echo 'this is doing maven file file'
 				pwd
 				 mvn package
