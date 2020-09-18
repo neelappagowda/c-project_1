@@ -11,9 +11,11 @@ pipeline {
 		stage ('maven package') {
 			agent { label 'java-node' }
 			steps {
+				sh ***
 				git branch: 'patch-1', url: 'https://github.com/neelappagowda/Test.git'
 				echo 'this is doing maven file file'
-				sh 'mvn package'
+				 mvn package
+		***
         }
         }
         }
