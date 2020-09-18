@@ -15,7 +15,7 @@ pipeline {
 		stage ('STAGE 2') {
 			steps {
 				git :https://github.com/neelappagowda/Test.git
-					Branches to build : */patch-1
+					Branches to build : */patch-2
 				echo 'this is doing maven file file'
 				sh 'mvn clean'
 				sh 'mvn package'
